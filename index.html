@@ -11,26 +11,32 @@
             height: 100vh;
             margin: 0;
             font-family: 'Ribeye', sans-serif;
+            background-color: #f0f0f0; /* Light background color for better visibility */
         }
         .container {
             text-align: center;
             position: relative;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gif_container img {
+            max-width: 100%;
+            height: auto;
         }
         .buttons {
-            position: relative;
-            display: inline-block;
+            display: flex;
+            justify-content: space-evenly;
             margin-top: 20px;
-            width: 200px; /* Adjust width as needed */
         }
         .btn {
-            position: absolute;
             margin: 5px;
-        }
-        #yesButton {
-            left: 0;
+            padding: 10px 20px;
         }
         #noButton {
-            right: 0;
+            position: absolute;
         }
     </style>
 </head> 

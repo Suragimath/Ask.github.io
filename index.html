@@ -14,19 +14,27 @@
         }
         .container {
             text-align: center;
+            position: relative;
         }
         .buttons {
             position: relative;
+            display: inline-block;
+            margin-top: 20px;
         }
         .btn {
             position: absolute;
+            margin: 5px;
+        }
+        #noButton {
+            left: 0;
+            top: 0;
         }
     </style>
 </head> 
 <body>
     <div class="container">
         <div>
-            <h1 class="header_text">Hello Cute stuff!</h1>
+            <h1 class="header_text">Hey Cute stuff!</h1>
             <h1 class="header_text">Vinita, Will you go on a romantic endeavour with me?</h1>
         </div>
         <div class="gif_container">
@@ -43,6 +51,8 @@
                 function moveButton() {
                     var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
                     var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                    if (x < 0) x = 0;
+                    if (y < 0) y = 0;
                     document.getElementById('noButton').style.left = `${x}px`;
                     document.getElementById('noButton').style.top = `${y}px`;
                 }

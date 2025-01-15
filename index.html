@@ -38,6 +38,15 @@
         #noButton {
             position: absolute;
         }
+        .no-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
     </style>
 </head> 
 <body>
@@ -51,19 +60,21 @@
         </div>
         <div class="buttons">
             <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
-            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            <div class="no-container">
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            </div>
             <script>
                 function nextPage() {
                     window.location.href = "yes.html";
                 }
                 
                 function moveButton() {
-                    var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
-                    var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
-                    if (x < 0) x = 0;
-                    if (y < 0) y = 0;
-                    document.getElementById('noButton').style.left = `${x}px`;
-                    document.getElementById('noButton').style.top = `${y}px`;
+                    var container = document.querySelector('.no-container');
+                    var noButton = document.getElementById('noButton');
+                    var x = Math.random() * (container.clientWidth - noButton.offsetWidth);
+                    var y = Math.random() * (container.clientHeight - noButton.offsetHeight);
+                    noButton.style.left = `${x}px`;
+                    noButton.style.top = `${y}px`;
                 }
             </script> 
         </div>
